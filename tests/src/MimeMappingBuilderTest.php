@@ -5,10 +5,11 @@ namespace Mimey\Tests;
 use Mimey\MimeTypes;
 use Mimey\MimeMappingBuilder;
 use PHPUnit\Framework\TestCase;
+use RuntimeException;
 
 class MimeMappingBuilderTest extends TestCase
 {
-	public function testFromEmpty()
+	public function testFromEmpty(): void
 	{
 		$builder = MimeMappingBuilder::blank();
 		$builder->add('foo/bar', 'foobar');
@@ -27,7 +28,7 @@ class MimeMappingBuilderTest extends TestCase
 		$this->assertEquals(['foo/baz'], $mime->getAllMimeTypes('foobaz'));
 	}
 
-	public function testFromBuiltIn()
+	public function testFromBuiltIn(): void
 	{
 		$builder = MimeMappingBuilder::create();
 		$mime1 = new MimeTypes($builder->getMapping());
@@ -45,7 +46,7 @@ class MimeMappingBuilderTest extends TestCase
 		$this->assertEquals('application/mycustomjson', $mime3->getMimeType('json'));
 	}
 
-	public function testAppendExtension()
+	public function testAppendExtension(): void
 	{
 		$builder = MimeMappingBuilder::blank();
 		$builder->add('foo/bar', 'foobar');
@@ -54,7 +55,7 @@ class MimeMappingBuilderTest extends TestCase
 		$this->assertEquals('foobar', $mime->getExtension('foo/bar'));
 	}
 
-	public function testAppendMime()
+	public function testAppendMime(): void
 	{
 		$builder = MimeMappingBuilder::blank();
 		$builder->add('foo/bar', 'foobar');
@@ -63,7 +64,10 @@ class MimeMappingBuilderTest extends TestCase
 		$this->assertEquals('foo/bar', $mime->getMimeType('foobar'));
 	}
 
-	public function testSave()
+	/**
+	 * @throws \JsonException
+	 */
+	public function testSave(): void
 	{
 		$builder = MimeMappingBuilder::blank();
 		$builder->add('foo/one', 'one');
@@ -72,10 +76,20 @@ class MimeMappingBuilderTest extends TestCase
 		$builder->add('foo/two2', 'two');
 		$file = tempnam(sys_get_temp_dir(), 'mapping_test');
 		$builder->save($file);
-		$mapping_included = require $file;
+		$mapping_included = json_decode(file_get_contents($file), true, flags: JSON_THROW_ON_ERROR);
 		$this->assertEquals($builder->getMapping(), $mapping_included);
 		$builder2 = MimeMappingBuilder::load($file);
 		unlink($file);
 		$this->assertEquals($builder->getMapping(), $builder2->getMapping());
+	}
+
+	public function testLoadInvalid(): void
+	{
+		$file = tempnam(sys_get_temp_dir(), 'mapping_test');
+		file_put_contents($file, 'invalid json');
+
+		$this->expectException(RuntimeException::class);
+
+		MimeMappingBuilder::load($file);
 	}
 }

@@ -3,6 +3,8 @@
 namespace Mimey;
 
 use JetBrains\PhpStorm\Pure;
+use RuntimeException;
+use Throwable;
 
 /**
  * Class for converting MIME types to file extensions and vice versa.
@@ -96,7 +98,14 @@ class MimeTypes implements MimeTypesInterface
 	protected static function getBuiltIn(): array
 	{
 		if (self::$built_in === null) {
-			self::$built_in = require(dirname(__DIR__) . '/mime.types.php');
+			$builtInTypes = dirname(__DIR__) . '/dist/mime.types.min.json';
+
+			try {
+				$json = file_get_contents($builtInTypes);
+				self::$built_in = json_decode($json, true, flags: JSON_THROW_ON_ERROR);
+			} catch (Throwable $e) {
+				throw new RuntimeException('Failed to parse built-in mime types at $builtInTypes', 0, $e);
+			}
 		}
 
 		return self::$built_in;

@@ -33,12 +33,5 @@ class MimeMappingGeneratorTest extends TestCase
 			],
 		];
 		$this->assertEquals($expected, $mapping);
-
-		$code = $generator->generateMappingCode();
-		$file = tempnam(sys_get_temp_dir(), 'mapping_test');
-		file_put_contents($file, $code);
-		$mapping_included = require $file;
-		unlink($file);
-		$this->assertEquals($mapping, $mapping_included);
 	}
 }
