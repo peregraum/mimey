@@ -3,12 +3,10 @@ Mimey
 
 PHP package for converting file extensions to MIME types and vice versa.
 
-[![Build Status](https://travis-ci.org/ralouphie/mimey.svg?branch=master)](https://travis-ci.org/ralouphie/mimey)
-[![Coverage Status](https://coveralls.io/repos/ralouphie/mimey/badge.svg?branch=master&service=github)](https://coveralls.io/github/ralouphie/mimey?branch=master)
-[![Code Climate](https://codeclimate.com/github/ralouphie/mimey/badges/gpa.svg)](https://codeclimate.com/github/ralouphie/mimey)
-[![Latest Stable Version](https://img.shields.io/packagist/v/ralouphie/mimey.svg)](https://packagist.org/packages/ralouphie/mimey)
-[![Downloads per Month](https://img.shields.io/packagist/dm/ralouphie/mimey.svg)](https://packagist.org/packages/ralouphie/mimey)
-[![License](https://img.shields.io/packagist/l/ralouphie/mimey.svg)](https://packagist.org/packages/ralouphie/mimey)
+[![Tests](https://github.com/elephox-dev/mimey/actions/workflows/tests.yml/badge.svg)](https://github.com/elephox-dev/mimey/actions/workflows/tests.yml)
+[![Latest Stable Version](https://img.shields.io/packagist/v/elephox/mimey.svg)](https://packagist.org/packages/elephox/mimey)
+[![Downloads per Month](https://img.shields.io/packagist/dm/elephox/mimey.svg)](https://packagist.org/packages/elephox/mimey)
+[![License](https://img.shields.io/packagist/l/elephox/mimey.svg)](https://packagist.org/packages/elephox/mimey)
 
 This package uses [httpd][]'s [mime.types][] to generate a mapping of file extension to MIME type and the other way around.
 
@@ -104,3 +102,9 @@ Compatible with PHP >= 8.1.
 ```
 composer require elephox/mimey
 ```
+
+## Credits
+
+This fork uses the same license as the original repository (MIT).
+This repository is a fork of [ralouphie/mimey](https://github.com/ralouphie/mimey).
+Thanks to them and all the contributors!
