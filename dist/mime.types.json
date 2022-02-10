@@ -2252,6 +2252,9 @@
         "spx": [
             "audio\/ogg"
         ],
+        "opus": [
+            "audio\/ogg"
+        ],
         "s3m": [
             "audio\/s3m"
         ],
@@ -4932,7 +4935,8 @@
         "audio\/ogg": [
             "oga",
             "ogg",
-            "spx"
+            "spx",
+            "opus"
         ],
         "audio\/s3m": [
             "s3m"

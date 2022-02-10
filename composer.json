@@ -29,5 +29,9 @@
     "psr-4": {
       "Mimey\\Tests\\": "tests/src/"
     }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "generate": "@php bin/generate.php"
   }
 }
