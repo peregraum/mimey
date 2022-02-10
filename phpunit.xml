@@ -1,22 +1,19 @@
-<phpunit
-	bootstrap="tests/bootstrap.php"
-	convertErrorsToExceptions="true"
-	convertNoticesToExceptions="true"
-	convertWarningsToExceptions="true"
-	strict="true">
-
-	<testsuite>
-		<directory>./tests/src</directory>
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+		 defaultTestSuite="default"
+		 bootstrap="tests/bootstrap.php"
+>
+	<testsuite name="default">
+		<directory>tests/src</directory>
 	</testsuite>
 
-	<filter>
-		<whitelist>
-			<directory suffix=".php">src</directory>
-		</whitelist>
-	</filter>
-
-	<logging>
-		<log type="coverage-clover" target="build/logs/clover.xml"/>
-	</logging>
-
+	<coverage>
+		<include>
+			<directory>src</directory>
+		</include>
+		<report>
+			<clover outputFile="build/logs/clover.xml"/>
+		</report>
+	</coverage>
 </phpunit>
