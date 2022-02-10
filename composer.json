@@ -2,6 +2,7 @@
   "name": "elephox/mimey",
   "description": "PHP package for converting file extensions to MIME types and vice versa.",
   "license": "MIT",
+  "type": "library",
   "authors": [
     {
       "name": "Ralph Khattar",
@@ -9,11 +10,15 @@
     }
   ],
   "require": {
-    "php": "~8.1 || ~8.2"
+    "php": "~8.1 || ~8.2",
+    "jetbrains/phpstorm-attributes": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5",
     "php-coveralls/php-coveralls": "^v2.5"
+  },
+  "suggest": {
+    "ext-mbstring": "For non-English user input parsing"
   },
   "autoload": {
     "psr-4": {
