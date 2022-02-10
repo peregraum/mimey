@@ -99,8 +99,8 @@ $mimes = new \Mimey\MimeTypes($builder->getMapping());
 
 ## Install
 
-Compatible with PHP >= 5.4.
+Compatible with PHP >= 8.1.
 
 ```
-composer require ralouphie/mimey
+composer require elephox/mimey
 ```
