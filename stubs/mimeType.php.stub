@@ -1,0 +1,28 @@
+<?php
+declare(strict_types=1);
+
+namespace %namespace%;
+
+use RuntimeException;
+use InvalidArgumentException;
+
+enum %classname%: string
+{
+%cases%
+
+	public function getExtension(): string
+	{
+		return match($this) {
+%type2ext%
+			default => throw new RuntimeException("Unknown extension for type: " . $this->value),
+		};
+	}
+
+	public static function fromExtension(string $extension): MimeType
+	{
+		return match($extension) {
+%ext2type%
+			default => throw new InvalidArgumentException("Unknown extension: " . $extension),
+		};
+	}
+}

@@ -10,8 +10,9 @@ use Mimey\MimeMappingGenerator;
 
 $mimeTypes = dirname(__DIR__) . "/data/mime.types";
 $mimeTypesCustom = dirname(__DIR__) . "/data/mime.types.custom";
-$destination = dirname(__DIR__) . "/dist/mime.types.json";
-$destinationMin = dirname(__DIR__) . "/dist/mime.types.min.json";
+$jsonDestination = dirname(__DIR__) . "/dist/mime.types.json";
+$minJsonDestination = dirname(__DIR__) . "/dist/mime.types.min.json";
+$enumDestination = dirname(__DIR__) . "/dist/MimeType.php";
 
 $mimeTypesContent = file_get_contents($mimeTypesCustom);
 $mimeTypesCustomContent = file_get_contents($mimeTypes);
@@ -19,8 +20,12 @@ $mimeTypesCustomContent = file_get_contents($mimeTypes);
 $generator = new MimeMappingGenerator($mimeTypesCustomContent . PHP_EOL . $mimeTypesContent);
 $mapping = $generator->generateMapping();
 
-$json = json_encode($mapping, JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR);
-file_put_contents($destination, $json);
+file_put_contents($jsonDestination, $generator->generateJson(false));
+file_put_contents($minJsonDestination, $generator->generateJson());
+file_put_contents($enumDestination, $generator->generatePhpEnum());
 
-$json_min = json_encode($mapping, JSON_THROW_ON_ERROR);
-file_put_contents($destinationMin, $json_min);
+echo "Generated MIME types mapping to:" . PHP_EOL;
+echo " - " . $jsonDestination . PHP_EOL;
+echo " - " . $minJsonDestination . PHP_EOL;
+echo " - " . $enumDestination . PHP_EOL;
+echo PHP_EOL;
