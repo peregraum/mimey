@@ -1,66 +1,5 @@
 {
     "mimes": {
-        "wof": [
-            "application\/font-woff"
-        ],
-        "php": [
-            "application\/php",
-            "application\/x-httpd-php",
-            "application\/x-httpd-php-source",
-            "application\/x-php",
-            "text\/php",
-            "text\/x-php"
-        ],
-        "otf": [
-            "application\/x-font-otf",
-            "font\/otf"
-        ],
-        "ttf": [
-            "application\/x-font-ttf",
-            "font\/ttf"
-        ],
-        "ttc": [
-            "application\/x-font-ttf",
-            "font\/collection"
-        ],
-        "zip": [
-            "application\/x-gzip",
-            "application\/zip"
-        ],
-        "amr": [
-            "audio\/amr"
-        ],
-        "mp3": [
-            "audio\/mpeg"
-        ],
-        "mpga": [
-            "audio\/mpeg"
-        ],
-        "mp2": [
-            "audio\/mpeg"
-        ],
-        "mp2a": [
-            "audio\/mpeg"
-        ],
-        "m2a": [
-            "audio\/mpeg"
-        ],
-        "m3a": [
-            "audio\/mpeg"
-        ],
-        "jpg": [
-            "image\/jpeg"
-        ],
-        "jpeg": [
-            "image\/jpeg"
-        ],
-        "jpe": [
-            "image\/jpeg"
-        ],
-        "bmp": [
-            "image\/x-ms-bmp",
-            "image\/bmp"
-        ],
         "ez": [
             "application\/andrew-inset"
         ],
@@ -2216,6 +2155,10 @@
         "yin": [
             "application\/yin+xml"
         ],
+        "zip": [
+            "application\/zip",
+            "application\/x-gzip"
+        ],
         "adp": [
             "audio\/adpcm"
         ],
@@ -2242,6 +2185,24 @@
         ],
         "mp4a": [
             "audio\/mp4"
+        ],
+        "mpga": [
+            "audio\/mpeg"
+        ],
+        "mp2": [
+            "audio\/mpeg"
+        ],
+        "mp2a": [
+            "audio\/mpeg"
+        ],
+        "mp3": [
+            "audio\/mpeg"
+        ],
+        "m2a": [
+            "audio\/mpeg"
+        ],
+        "m3a": [
+            "audio\/mpeg"
         ],
         "oga": [
             "audio\/ogg"
@@ -2363,11 +2324,27 @@
         "xyz": [
             "chemical\/x-xyz"
         ],
+        "ttc": [
+            "font\/collection",
+            "application\/x-font-ttf"
+        ],
+        "otf": [
+            "font\/otf",
+            "application\/x-font-otf"
+        ],
+        "ttf": [
+            "font\/ttf",
+            "application\/x-font-ttf"
+        ],
         "woff": [
             "font\/woff"
         ],
         "woff2": [
             "font\/woff2"
+        ],
+        "bmp": [
+            "image\/bmp",
+            "image\/x-ms-bmp"
         ],
         "cgm": [
             "image\/cgm"
@@ -2380,6 +2357,15 @@
         ],
         "ief": [
             "image\/ief"
+        ],
+        "jpeg": [
+            "image\/jpeg"
+        ],
+        "jpg": [
+            "image\/jpeg"
+        ],
+        "jpe": [
+            "image\/jpeg"
         ],
         "ktx": [
             "image\/ktx"
@@ -2972,59 +2958,23 @@
         ],
         "ice": [
             "x-conference\/x-cooltalk"
+        ],
+        "wof": [
+            "application\/font-woff"
+        ],
+        "php": [
+            "application\/php",
+            "application\/x-httpd-php",
+            "application\/x-httpd-php-source",
+            "application\/x-php",
+            "text\/php",
+            "text\/x-php"
+        ],
+        "amr": [
+            "audio\/amr"
         ]
     },
     "extensions": {
-        "application\/font-woff": [
-            "wof"
-        ],
-        "application\/php": [
-            "php"
-        ],
-        "application\/x-font-otf": [
-            "otf"
-        ],
-        "application\/x-font-ttf": [
-            "ttf",
-            "ttc"
-        ],
-        "application\/x-gzip": [
-            "zip"
-        ],
-        "application\/x-httpd-php": [
-            "php"
-        ],
-        "application\/x-httpd-php-source": [
-            "php"
-        ],
-        "application\/x-php": [
-            "php"
-        ],
-        "audio\/amr": [
-            "amr"
-        ],
-        "audio\/mpeg": [
-            "mp3",
-            "mpga",
-            "mp2",
-            "mp2a",
-            "m2a",
-            "m3a"
-        ],
-        "image\/jpeg": [
-            "jpg",
-            "jpeg",
-            "jpe"
-        ],
-        "image\/x-ms-bmp": [
-            "bmp"
-        ],
-        "text\/php": [
-            "php"
-        ],
-        "text\/x-php": [
-            "php"
-        ],
         "application\/andrew-inset": [
             "ez"
         ],
@@ -4932,6 +4882,14 @@
             "m4a",
             "mp4a"
         ],
+        "audio\/mpeg": [
+            "mpga",
+            "mp2",
+            "mp2a",
+            "mp3",
+            "m2a",
+            "m3a"
+        ],
         "audio\/ogg": [
             "oga",
             "ogg",
@@ -5067,6 +5025,11 @@
         ],
         "image\/ief": [
             "ief"
+        ],
+        "image\/jpeg": [
+            "jpeg",
+            "jpg",
+            "jpe"
         ],
         "image\/ktx": [
             "ktx"
@@ -5531,6 +5494,43 @@
         ],
         "x-conference\/x-cooltalk": [
             "ice"
+        ],
+        "application\/font-woff": [
+            "wof"
+        ],
+        "application\/php": [
+            "php"
+        ],
+        "application\/x-font-otf": [
+            "otf"
+        ],
+        "application\/x-font-ttf": [
+            "ttf",
+            "ttc"
+        ],
+        "application\/x-gzip": [
+            "zip"
+        ],
+        "application\/x-httpd-php": [
+            "php"
+        ],
+        "application\/x-httpd-php-source": [
+            "php"
+        ],
+        "application\/x-php": [
+            "php"
+        ],
+        "audio\/amr": [
+            "amr"
+        ],
+        "image\/x-ms-bmp": [
+            "bmp"
+        ],
+        "text\/php": [
+            "php"
+        ],
+        "text\/x-php": [
+            "php"
         ]
     }
 }

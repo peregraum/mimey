@@ -32,6 +32,7 @@
   },
   "scripts": {
     "test": "phpunit",
-    "generate": "@php bin/generate.php"
+    "generate-types": "@php bin/generate.php",
+    "update-types": "@php bin/update.php"
   }
 }
