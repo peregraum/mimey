@@ -90,7 +90,7 @@ class MimeMappingGenerator
 		foreach ($mapping['extensions'] as $mime => $extensions) {
 			$nameMap[$mime] = $this->convertMimeTypeToCaseName($mime);
 
-			$values['cases'] .= sprintf("\tcase %s = \"%s\";\n", $nameMap[$mime], $mime);
+			$values['cases'] .= sprintf("\tcase %s = '%s';\n", $nameMap[$mime], $mime);
 			$values['type2ext'] .= sprintf("\t\t\tself::%s => '%s',\n", $nameMap[$mime], $extensions[0]);
 		}
 
