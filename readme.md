@@ -31,6 +31,19 @@ $mimes->getMimeType('json'); // application/json
 $mimes->getExtension('application/json'); // json
 ```
 
+### Using the enum
+
+```php
+$json = \Mimey\MimeType::ApplicationJson;
+echo $json->getExtension(); // json
+echo $json->value; // application/json
+
+$html = \Mimey\MimeType::fromExtension('html');
+echo $html->value; // text/html
+
+\Mimey\MimeType::fromExtension('asdf'); // throws an InvalidArgumentException if the extension cannot be found
+```
+
 ### Getting All
 
 It's rare, but some extensions have multiple MIME types:
@@ -96,17 +109,6 @@ The file can then be loaded to avoid overhead of repeated `$builder->add(...)` c
 // Load the conversions from a cached file.
 $builder = \Mimey\MimeMappingBuilder::load($cache_file_path);
 $mimes = new \Mimey\MimeTypes($builder->getMapping());
-```
-
-Using the enum:
-
-```php
-$json = \Mimey\MimeType::ApplicationJson;
-echo $json->getExtension(); // json
-echo $json->value; // application/json
-
-$html = \Mimey\MimeType::fromExtension('html');
-echo $html->value; // text/html
 ```
 
 ## Install
