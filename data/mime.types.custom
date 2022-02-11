@@ -1,8 +1,18 @@
-# This file is in the same format as mime.types but the
-# mappings in this file take precedence.
+# This file is in the same format as mime.types but the mappings in this file take precedence.
 #
-# MIME type (lowercased)			Extensions
-# ============================================	==========
+# ABNF definition of this file format:
+#   file        = *( line LF )
+#   line        = [ type ] *( SP ) [ comment ]
+#   comment     = "#" *( CHAR )
+#   type        = mime-type HTAB HTAB HTAB HTAB HTAB extension *( SP extension )
+#   mime-type   = 1*alphanum "/" 1*alphanum
+#   extension   = 1*alphanum
+#   lowercase   = %x41-5A
+#                       ; a - z
+#   alphanum    = 1*lowercase *( lowercase / DIGIT / "-" / "." )
+#
+# MIME type									Extensions
+# =========================================	==========
 
 application/font-woff					wof
 application/php					php
