@@ -6,7 +6,7 @@ namespace Mimey;
 use RuntimeException;
 use InvalidArgumentException;
 
-enum MimeType: string
+enum MimeType: string implements \Mimey\MimeTypeInterface
 {
 	case ApplicationAndrewInset = 'application/andrew-inset';
 	case ApplicationApplixware = 'application/applixware';
@@ -1574,6 +1574,11 @@ enum MimeType: string
 
 			default => throw new RuntimeException("Unknown extension for type: " . $this->value),
 		};
+	}
+
+	public function getValue(): string
+	{
+		return $this->value;
 	}
 
 	public static function fromExtension(string $extension): MimeType

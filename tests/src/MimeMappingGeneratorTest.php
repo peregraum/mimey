@@ -95,7 +95,7 @@ namespace TestMimeNamespace;
 use RuntimeException;
 use InvalidArgumentException;
 
-enum TestMimeClass: string
+enum TestMimeClass: string implements \Mimey\MimeTypeInterface
 {
 	case ApplicationJson = 'application/json';
 	case ImageJpeg = 'image/jpeg';
@@ -109,6 +109,11 @@ enum TestMimeClass: string
 
 			default => throw new RuntimeException("Unknown extension for type: " . \$this->value),
 		};
+	}
+
+	public function getValue(): string
+	{
+		return \$this->value;
 	}
 
 	public static function fromExtension(string \$extension): MimeType

@@ -6,7 +6,7 @@ namespace %namespace%;
 use RuntimeException;
 use InvalidArgumentException;
 
-enum %classname%: string
+enum %classname%: string implements \Mimey\MimeTypeInterface
 {
 %cases%
 
@@ -16,6 +16,11 @@ enum %classname%: string
 %type2ext%
 			default => throw new RuntimeException("Unknown extension for type: " . $this->value),
 		};
+	}
+
+	public function getValue(): string
+	{
+		return $this->value;
 	}
 
 	public static function fromExtension(string $extension): MimeType
