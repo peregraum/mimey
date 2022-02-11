@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Mimey;
+namespace Elephox\Mimey;
 
 interface MimeTypeInterface
 {

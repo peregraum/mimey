@@ -1,12 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Mimey;
+namespace Elephox\Mimey;
 
 use RuntimeException;
 use InvalidArgumentException;
+use Elephox\Mimey\MimeTypeInterface;
 
-enum MimeType: string implements \Mimey\MimeTypeInterface
+enum MimeType: string implements MimeTypeInterface
 {
 	case ApplicationAndrewInset = 'application/andrew-inset';
 	case ApplicationApplixware = 'application/applixware';

@@ -1,8 +1,8 @@
 <?php
 
-namespace Mimey\Tests;
+namespace Elephox\Mimey\Tests;
 
-use Mimey\MimeMappingGenerator;
+use Elephox\Mimey\MimeMappingGenerator;
 use PHPUnit\Framework\TestCase;
 
 class MimeMappingGeneratorTest extends TestCase
@@ -94,8 +94,9 @@ namespace TestMimeNamespace;
 
 use RuntimeException;
 use InvalidArgumentException;
+use Elephox\Mimey\MimeTypeInterface;
 
-enum TestMimeClass: string implements \Mimey\MimeTypeInterface
+enum TestMimeClass: string implements MimeTypeInterface
 {
 	case ApplicationJson = 'application/json';
 	case ImageJpeg = 'image/jpeg';

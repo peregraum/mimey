@@ -25,12 +25,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Mimey\\": ["src/", "dist/"]
+      "Elephox\\Mimey\\": ["src/", "dist/"]
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mimey\\Tests\\": "tests/src/"
+      "Elephox\\Mimey\\Tests\\": "tests/src/"
     }
   },
   "scripts": {

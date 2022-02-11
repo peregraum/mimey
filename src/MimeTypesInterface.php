@@ -1,6 +1,6 @@
 <?php
 
-namespace Mimey;
+namespace Elephox\Mimey;
 
 /**
  * An interface for converting between MIME types and file extensions.

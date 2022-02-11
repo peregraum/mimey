@@ -5,8 +5,9 @@ namespace %namespace%;
 
 use RuntimeException;
 use InvalidArgumentException;
+use Elephox\Mimey\MimeTypeInterface;
 
-enum %classname%: string implements \Mimey\MimeTypeInterface
+enum %classname%: string implements MimeTypeInterface
 {
 %cases%
 
