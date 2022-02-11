@@ -2972,6 +2972,15 @@
         ],
         "amr": [
             "audio\/amr"
+        ],
+        "heif": [
+            "image\/heif"
+        ],
+        "heic": [
+            "image\/heif"
+        ],
+        "avif": [
+            "image\/avif"
         ]
     },
     "extensions": {
@@ -5531,6 +5540,13 @@
         ],
         "text\/x-php": [
             "php"
+        ],
+        "image\/heif": [
+            "heif",
+            "heic"
+        ],
+        "image\/avif": [
+            "avif"
         ]
     }
 }

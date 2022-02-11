@@ -787,6 +787,8 @@ enum MimeType: string implements \Mimey\MimeTypeInterface
 	case ImageXMsBmp = 'image/x-ms-bmp';
 	case TextPhp = 'text/php';
 	case TextXPhp = 'text/x-php';
+	case ImageHeif = 'image/heif';
+	case ImageAvif = 'image/avif';
 
 
 	public function getExtension(): string
@@ -1571,6 +1573,8 @@ enum MimeType: string implements \Mimey\MimeTypeInterface
 			self::ImageXMsBmp => 'bmp',
 			self::TextPhp => 'php',
 			self::TextXPhp => 'php',
+			self::ImageHeif => 'heif',
+			self::ImageAvif => 'avif',
 
 			default => throw new RuntimeException("Unknown extension for type: " . $this->value),
 		};
@@ -2571,6 +2575,9 @@ enum MimeType: string implements \Mimey\MimeTypeInterface
 			'wof' => self::ApplicationFontWoff,
 			'php' => self::ApplicationPhp,
 			'amr' => self::AudioAmr,
+			'heif' => self::ImageHeif,
+			'heic' => self::ImageHeif,
+			'avif' => self::ImageAvif,
 
 			default => throw new InvalidArgumentException("Unknown extension: " . $extension),
 		};

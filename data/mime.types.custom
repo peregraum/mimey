@@ -28,3 +28,5 @@ image/jpeg					jpg jpeg jpe
 image/x-ms-bmp					bmp
 text/php					php
 text/x-php					php
+image/heif					heif heic
+image/avif					avif
