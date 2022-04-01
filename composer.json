@@ -14,7 +14,7 @@
     }
   ],
   "require": {
-    "php": "~8.1.0 || ~8.2.0",
+    "php": "^7.4",
     "jetbrains/phpstorm-attributes": "^1.0"
   },
   "require-dev": {
